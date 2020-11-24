@@ -31,7 +31,7 @@ router.post('/signin', passport.authenticate("local"), (req,res)=> {
   const token = jwt.sign({
     exp: Math.floor(Date.now() / 1000) + (expiresIn),
     data: req.user._id
-  }, process.env.JWTSECRET || "");
+  }, "secret");
   res.json({...req.user._doc, token})
   //console.log(res)
   // res.send(res.json())
@@ -39,7 +39,7 @@ router.post('/signin', passport.authenticate("local"), (req,res)=> {
 
 router.post("/validate", ({body:{token}},res)=> {
   //console.log(token)
-  const decoded = jwt.decode(token, process.env.JWTSECRET || "");
+  const decoded = jwt.decode(token, "secret");
   //console.log(decoded);
 
   //checking to see if token expired

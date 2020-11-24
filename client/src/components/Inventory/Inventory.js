@@ -73,6 +73,7 @@ function InventoryItems() {
     
 
   const [item, setItem] = useState({})
+  const [itemId, setItemId] = useState("")
   const [inventoryState, setInventoryState] = useState([]);
   const [inventoryStateBeforeRender, setInventoryStateBeforeRender] = useState([]);
   const [rerender, setRerender] = useState(false)
@@ -86,12 +87,12 @@ function InventoryItems() {
     // eslint-disable-next-line react-hooks/exhaustive-deps    
     }, [rerender]);
 
-    let id = useParams()
+    let user = useParams()
     //console.log(inventoryState)
 
     const beforeMount = () => {
-        API.getUserbyId(id.id).then(res => {
-            console.log(res.data.inventory)
+        API.getUserbyId(user.id).then(res => {
+            //console.log(res.data.inventory)
 
             const inventoryArr = []
        
@@ -122,7 +123,18 @@ function InventoryItems() {
 
 // findTheId()
 
-  const updateInventory = (newItem, i) => {
+
+
+// const deleteInventory = (id) => {
+//     API.deleteInventory(id)
+//     .then(res => {
+//         console.log(res)
+//     })
+//     API.updateUser(user.id)
+//     .then(res => console.log(res))
+// }
+
+  const updateInventory = (newItem) => {
     API.updateInventory(newItem._id, newItem)
     .then(res => console.log(res))
   }
@@ -167,13 +179,16 @@ function InventoryItems() {
                                             </button>
                                         </td>
                                         <td>
-                                            <button
+                                            {/* <button
                                                 type="button"
                                                 className="btn btn-primary"
                                                 style={{ backgroundColor: "red" }}
+                                                onClick={() => {
+                                                    //setItemId({...item}); 
+                                                deleteInventory(item._id)}}
                                                 >
                                             Delete
-                                            </button>
+                                            </button> */}
                                         </td>
                                 </tr>
                             </>

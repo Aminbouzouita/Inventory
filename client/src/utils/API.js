@@ -8,7 +8,6 @@ export default {
     return axios.get("/api/user/" + username);
   },
   getUserbyId: function(id) {
-    console.log(id)
     return axios.get("/api/inventory/user/" + id)
   },
   // Deletes the user with the given id
@@ -34,7 +33,16 @@ export default {
     return axios.get("/api/inventory/" + id)
   },
 
+  deleteInventory: function(id) {
+    return axios.delete("/api/inventory/delete/" + id)
+  },
+
   updateInventory: function(id, inventoryData) {
-    return axios.put("/api/inventory/" + id + "/update", inventoryData)
-  }
+    return axios.put("/api/inventory/update/" + id, inventoryData)
+  },
+  // updateUser: function(id, userId) {
+  //   console.log("id", id)
+  //   console.log("userid", userId)
+  //   return axios.put("/api/user/update" + userId, id)
+  // }
 };

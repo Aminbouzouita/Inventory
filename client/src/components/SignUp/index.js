@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from '../../utils/API';
 import validate from "../FormValidation/SignUpFormRules";
-import {useHistory} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 import background from "../../assets/pexels-tiger-lily-4481323.jpg"
 
 function SignUp() {
@@ -183,7 +183,7 @@ function SignUp() {
                 </label>
               </div>
             </div>
-            <a href="/signin"><button type="submit" className="inverted" id="signup-login-btn">Sign Up</button></a>
+            <Link to="/signin"><button type="submit" className="inverted" id="signup-login-btn">Sign Up</button></Link>
           </form>
         </div>
       </div>
