@@ -42,7 +42,7 @@ function SignUp() {
     })
       .then((res) => {
         if( res.status == 200 ){
-          history.push("/inventory")
+          // history.push("/inventory")
         }
     })
       .catch(err => console.log(err));
