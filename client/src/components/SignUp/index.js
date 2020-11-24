@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import API from '../../utils/API';
 import validate from "../FormValidation/SignUpFormRules";
-import {useHistory, Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import background from "../../assets/pexels-tiger-lily-4481323.jpg"
 
 function SignUp() {
@@ -42,7 +42,7 @@ function SignUp() {
     })
       .then((res) => {
         if( res.status == 200 ){
-          // history.push("/inventory")
+          history.push("/inventory")
         }
     })
       .catch(err => console.log(err));
@@ -183,7 +183,7 @@ function SignUp() {
                 </label>
               </div>
             </div>
-            <Link to="/signin"><button type="submit" className="inverted" id="signup-login-btn">Sign Up</button></Link>
+              <button type="submit" className="inverted" id="signup-login-btn">Sign Up</button>
           </form>
         </div>
       </div>

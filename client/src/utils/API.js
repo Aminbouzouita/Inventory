@@ -22,6 +22,7 @@ export default {
   },
   // Saves a user to the database
   saveuser: function(userData) {
+    console.log(userData)
     return axios.post("/api/user/signup", userData);
   },
   // Save Inventory to a user

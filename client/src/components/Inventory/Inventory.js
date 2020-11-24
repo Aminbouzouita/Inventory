@@ -149,11 +149,11 @@ function InventoryItems() {
                         <tr>
                             <th scope="col" width="10%">#</th>
                             <th scope="col" width="30%">Item Name</th>
-                            <th scope="col" width="10%">Unit Price</th>
+                            <th scope="col" width="15%">Unit Price</th>
                             <th scope="col" width="10%">Date Added</th>
-                            <th scope="col" width="10%">In Stock</th>
+                            <th scope="col" width="15%">In Stock</th>
                             <th scope="col" width="10%">Update</th>
-                            <th scope="col" width="10%">Delete</th>
+                            {/* <th scope="col" width="10%">Delete</th> */}
                         </tr>
                     </thead>
                     <tbody>

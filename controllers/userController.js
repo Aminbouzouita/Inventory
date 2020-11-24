@@ -21,6 +21,7 @@ module.exports = {
       .catch(err => res.status(422).son(err));
   },
   create: function(req, res) {
+    //console.log(req.body)
     // let newUser = new User({
     //   username: req.body.username,
     //   password: req.body.password
@@ -31,7 +32,7 @@ module.exports = {
     // });
     db.User
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => res.json((dbModel)))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
